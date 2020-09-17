@@ -1,19 +1,23 @@
 {
   "name": "hvt-read-api",
   "version": "1.0.0",
-  "description": "A read api for hvt project to read form dynamo db",
+  "description": "A lambda to do read actions against the HVT dynamo db",
   "main": "index.js",
   "scripts": {
     "lint": "eslint '*/**/*.ts' --quiet --fix",
     "test": "jest --coverage",
     "build:dev": "NODE_ENV=development webpack-cli",
-    "start:dev": "sam local start-api",
+    "start:dev": "docker-compose up -d && sam local start-api --docker-network hvt-lambda-network",
     "invoke": "sam local invoke"
   },
   "constributers": [
     {
       "name": "Shaun Hare",
       "email": "shaun.hare@dvsa.gov.uk"
+    },
+    {
+      "name": "Bartosz (Bart) Drozd",
+      "email": "drozd.b@kainos.com"
     }
   ],
   "license": "MIT",
