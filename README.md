@@ -43,7 +43,7 @@ A READ ONLY api for HVT testing data
 
 **Logging**
 
-By using a utility wrapper (`src/utility/logger`) surrounding `console.log`, the `awsRequestId` and a "correlation ID" is output with every debug/info/warn/error message.
+By using a utility wrapper (`src/util/logger`) surrounding `console.log`, the `awsRequestId` and a "correlation ID" is output with every debug/info/warn/error message.
 
 For this pattern to work, every service/lambda must forward their correlation ID to subsequent services via a header e.g. `X-Correlation-Id`. 
 
