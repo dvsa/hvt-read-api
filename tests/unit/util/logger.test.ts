@@ -1,6 +1,6 @@
 import type { APIGatewayProxyEvent, Context, APIGatewayEventRequestContext } from 'aws-lambda';
 import { v4 } from 'uuid';
-import { createLogger, Logger } from '../../src/util/logger';
+import { createLogger, Logger } from '../../../src/util/logger';
 
 describe('Test logger', () => {
   test('createLogger() via context lambdaId should return a logger object with the correct logFormat', () => {
