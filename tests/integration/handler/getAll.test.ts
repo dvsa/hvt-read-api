@@ -1,11 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type {
   APIGatewayProxyEvent, APIGatewayProxyResult, Context, APIGatewayEventRequestContext,
 } from 'aws-lambda';
 import { v4 } from 'uuid';
-import { handler } from '../../../src/handler/dbGetAll';
+import { handler } from '../../../src/handler/getAll';
 import * as dynamoHelper from '../test-helpers/dynamo.helper';
 
 const TEST_TABLE = 'TEST_TABLE_GETALL';
@@ -27,8 +24,8 @@ describe('Get All Lambda Function', () => {
     const contextMock: Context = <Context> { awsRequestId: v4() };
 
     const res: APIGatewayProxyResult = await handler(eventMock, contextMock);
-    const body = JSON.parse(res.body);
-    const items = body.Items as any[];
+    const body: Record<string, unknown> = JSON.parse(res.body) as Record<string, unknown>;
+    const items: unknown[] = body.Items as unknown[];
 
     expect(res.statusCode).toBe(200);
     expect(items.length).toBe(3);
@@ -51,8 +48,8 @@ describe('Get All Lambda Function', () => {
     const contextMock: Context = <Context> { awsRequestId: v4() };
 
     const res: APIGatewayProxyResult = await handler(eventMock, contextMock);
-    const body = JSON.parse(res.body);
-    const items = body.Items as any[];
+    const body: Record<string, unknown> = JSON.parse(res.body) as Record<string, unknown>;
+    const items: unknown[] = body.Items as unknown[];
 
     expect(res.statusCode).toBe(200);
     expect(items.length).toBe(2);
@@ -77,8 +74,6 @@ describe('Get All Lambda Function', () => {
     const contextMock: Context = <Context> { awsRequestId: v4() };
 
     const res: APIGatewayProxyResult = await handler(eventMock, contextMock);
-    const body = JSON.parse(res.body);
-    const items = body.Items as any[];
 
     expect(res.statusCode).toBe(200);
   });
@@ -120,15 +115,15 @@ describe('Get All Lambda Function', () => {
   });
 
   beforeAll(async () => {
-    const params = dynamoHelper.getCreateTableParams('id', TEST_TABLE) as any;
+    const params: Record<string, unknown> = dynamoHelper.getCreateTableParams('id', TEST_TABLE);
     await dynamoHelper.createTable(params);
   });
 
   beforeEach(async () => {
-    const deleteParams = dynamoHelper.getDeleteTableParams(TEST_TABLE);
+    const deleteParams: Record<string, unknown> = dynamoHelper.getDeleteTableParams(TEST_TABLE);
     await dynamoHelper.deleteTable(deleteParams);
 
-    const createParams = dynamoHelper.getCreateTableParams('id', TEST_TABLE) as any;
+    const createParams: Record<string, unknown> = dynamoHelper.getCreateTableParams('id', TEST_TABLE);
     await dynamoHelper.createTable(createParams);
 
     await dynamoHelper.put(EXPECTED1, TEST_TABLE);
@@ -137,7 +132,7 @@ describe('Get All Lambda Function', () => {
   });
 
   afterAll(async () => {
-    const deleteParams = dynamoHelper.getDeleteTableParams(TEST_TABLE);
+    const deleteParams: Record<string, unknown> = dynamoHelper.getDeleteTableParams(TEST_TABLE);
     await dynamoHelper.deleteTable(deleteParams);
   });
 });
