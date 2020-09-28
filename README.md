@@ -62,7 +62,7 @@ This shows an example of what the logs look like from the second invoked lambda 
 
 **Database migrations**
 
-Inside `ops/local` directory there are simple bash scripts for creating dynamoDB tables and populating them with dummy data. For example, in order to create and populate `VehicleTestStations` table with test data, run the following command inside `ops/local` directory:
+Inside `ops/local` directory there are simple bash scripts for creating dynamoDB tables and populating them with dummy data. For example, in order to create and populate `AuthorisedTestingFacilities` table with test data, run the following command inside `ops/local` directory:
 ```bash
-./create-vehicle-test-stations-table.sh && ./populate-vehicle-test-stations-table.sh
+./create-authorised-testing-facilities-table/sh && ./populate-authorised-testing-facilities-table.sh
 ```

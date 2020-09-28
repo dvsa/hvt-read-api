@@ -1,0 +1,449 @@
+{
+  "AuthorisedTestingFacilities": [
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "614F8C80-EF3F-43A2-B02D-9061A3144232" },
+          "name": { "S": "Batz - Ortiz" },
+          "location": {
+            "M": {
+              "postcode": { "S": "BT1 67E" },
+              "latitude": { "N": "51.437584" },
+              "longitude": { "N": "-0.082154" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-09-18T17:42:34Z" },
+              "start_date": { "S": "2020-09-21T08:00:00Z" },
+              "end_date": { "S": "2020-10-11T17:00:00Z" },
+              "is_available": { "BOOL": true }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "goods vehicles (HGV)",
+              "public service vehicles (PSV)",
+              "trailers",
+              "rigids"
+            ]
+          },
+          "exclusions": {
+            "SS": [
+              "LEZ phase 3",
+              "petrol emissions"
+            ]
+          },
+          "restrictions": {
+            "SS": [
+              "maximum vehicle length 12.5 metres",
+              "door height 5.1 metres"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "be727e06-64d0-4552-923d-2241ea21eaf4" },
+              "unavailable": { "S": "f5ad9791-7b6d-4c9f-a64d-0489d4c53213" },
+              "expiry_date": { "S": "2020-10-11T17:00:00Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "D47C2A01-E30B-4D27-8C83-72F1E93CECCE" },
+          "name": { "S": "Gutmann Inc" },
+          "location": {
+            "M": {
+              "postcode": { "S": "SL5 1EF" },
+              "latitude": { "N": "51.698443" },
+              "longitude": { "N": "-1.227571" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-09-15T17:38:20Z" },
+              "start_date": { "S": "2020-10-22T12:00:00Z" },
+              "end_date": { "S": "2020-11-12T20:00:00Z" },
+              "is_available": { "BOOL": false }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "goods vehicles (HGV)",
+              "public service vehicles (PSV)"
+            ]
+          },
+          "exclusions": {
+            "SS": [
+              "petrol emissions"
+            ]
+          },
+          "restrictions": {
+            "SS": [
+              "maximum vehicle length 5.5 metres",
+              "door height 6.2 metres"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "35E0C644-5907-4DBF-A387-338B406D9161" },
+              "unavailable": { "S": "37883FE1-1F21-4D6B-B8D9-524FA6102265" },
+              "expiry_date": { "S": "2020-10-12T05:05:00Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "98A96E48-1213-4994-AD91-234D2D196CD0" },
+          "name": { "S": "Reinger, Anderson and Reichel" },
+          "location": {
+            "M": {
+              "postcode": { "S": "UO5 8AS" },
+              "latitude": { "N": "51.841213" },
+              "longitude": { "N": "-2.238988" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-09-20T15:10:05Z" },
+              "start_date": { "S": "2020-10-20T08:00:00Z" },
+              "end_date": { "S": "2020-10-19T17:00:00Z" },
+              "is_available": { "BOOL": true }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "ADR and dangerous goods vehicles",
+              "vehicles laden with Diesel, gas oil, Kerosene, LPG and other compressed or liquefied gases within a sealed vessel",
+              "substances below 61 degrees centigrade including bitumen",
+              "public service vehicles (PSV)",
+              "trailers"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "64730386-80A4-41E1-8FEA-D0781B50E58D" },
+              "unavailable": { "S": "64C43AE9-8E40-4766-8F3F-F7A802383C4E" },
+              "expiry_date": { "S": "2020-11-01T14:52:13Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "40C3278B-CB72-4D5D-8634-616275BC1257" },
+          "name": { "S": "DuBuque Inc" },
+          "location": {
+            "M": {
+              "postcode": { "S": "EH88 8JA" },
+              "latitude": { "N": "51.480020" },
+              "longitude": { "N": "-3.184443" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-09-19T15:01:32Z" },
+              "start_date": { "S": "2020-10-21T08:00:00Z" },
+              "end_date": { "S": "2020-11-11T17:00:00Z" },
+              "is_available": { "BOOL": false }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "trailers",
+              "ADR and dangerous goods vehicles",
+              "vehicles laden with Diesel, gas oil, Kerosene, LPG and other compressed or liquefied gases within a sealed vessel"
+            ]
+          },
+          "restrictions": {
+            "SS": [
+              "maximum vehicle length 12.5 metres",
+              "door height 4.3 metres"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "F2707F0F-ED91-4AA6-B36B-653BCF158D79" },
+              "unavailable": { "S": "EBBB8EE3-BA00-4999-9F9A-A0F542FEF368" },
+              "expiry_date": { "S": "2020-10-20T14:00:01Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "941E0D96-0D40-403E-A227-02CB775F0EFB" },
+          "name": { "S": "Cartwright - Lowe" },
+          "location": {
+            "M": {
+              "postcode": { "S": "UJ41 5ES" },
+              "latitude": { "N": "52.894328" },
+              "longitude": { "N": "-1.469432" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-09-12T14:12:34Z" },
+              "start_date": { "S": "2020-09-22T08:00:00Z" },
+              "end_date": { "S": "2020-10-25T17:00:00Z" },
+              "is_available": { "BOOL": true }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "goods vehicles (HGV)",
+              "rigids",
+              "public service vehicles (PSV)"
+            ]
+          },
+          "exclusions": {
+            "SS": [
+              "LEZ phase 3",
+              "petrol emissions"
+            ]
+          },
+          "restrictions": {
+            "SS": [
+              "maximum vehicle length 12.5 metres",
+              "door height 4.3 metres"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "42B0DCD0-AB05-4E7D-8A36-C3C7B27CACE5" },
+              "unavailable": { "S": "D259A3A6-0404-412E-839D-E9DABA02E836" },
+              "expiry_date": { "S": "2020-11-05T17:52:00Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "1B938BE6-BB32-45F6-9AD2-B5BF29606F71" },
+          "name": { "S": "Wisozk - Jenkins" },
+          "location": {
+            "M": {
+              "postcode": { "S": "JK12 9QD" },
+              "latitude": { "N": "51.246363" },
+              "longitude": { "N": "1.111374" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-09-14T13:42:34Z" },
+              "start_date": { "S": "2020-10-10T08:00:00Z" },
+              "end_date": { "S": "2020-10-20T17:00:00Z" },
+              "is_available": { "BOOL": false }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "ADR and dangerous goods vehicles",
+              "public service vehicles (PSV)",
+              "restricted vehicles"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "BCA69678-98BA-4228-9A56-9F19C2758EF0" },
+              "unavailable": { "S": "8E20AC46-08D2-4EC0-BB49-233D468872E2" },
+              "expiry_date": { "S": "2020-10-13T17:00:00Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "1D62ABFD-F03D-4DE0-9ED5-8C02F97C553D" },
+          "name": { "S": "Beier, Jacobi and Kautzer" },
+          "location": {
+            "M": {
+              "postcode": { "S": "AA2 5CY" },
+              "latitude": { "N": "52.621315" },
+              "longitude": { "N": "1.287272" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-09-18T17:42:34Z" },
+              "start_date": { "S": "2020-09-21T08:00:00Z" },
+              "end_date": { "S": "2020-10-11T17:00:00Z" },
+              "is_available": { "BOOL": true }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "goods vehicles (HGV)",
+              "public service vehicles (PSV)"
+            ]
+          },
+          "exclusions": {
+            "SS": [
+              "LEZ phase 3",
+              "petrol emissions"
+            ]
+          },
+          "restrictions": {
+            "SS": [
+              "maximum vehicle length 12.5 metres",
+              "door height 4.3 metres"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "8CC7CC7F-B3CD-4606-92D9-01FB18B161CD" },
+              "unavailable": { "S": "05FCBA6C-BBCD-4A02-A5D7-7CEA948EA5BE" },
+              "expiry_date": { "S": "2020-11-23T17:55:59Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "AF670FA7-6893-45B9-8032-EFBDB17FD60F" },
+          "name": { "S": "Orn, Ondricka and Kshlerin" },
+          "location": {
+            "M": {
+              "postcode": { "S": "DT34 9AU" },
+              "latitude": { "N": "52.227799" },
+              "longitude": { "N": "1.583986" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-08-22T17:42:34Z" },
+              "start_date": { "S": "2020-10-21T07:00:00Z" },
+              "end_date": { "S": "2020-12-13T16:00:00Z" },
+              "is_available": { "BOOL": false }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "goods vehicles (HGV)",
+              "public service vehicles (PSV)"
+            ]
+          },
+          "exclusions": {
+            "SS": [
+              "LEZ phase 3",
+              "petrol emissions"
+            ]
+          },
+          "restrictions": {
+            "SS": [
+              "maximum vehicle length 10.9 metres",
+              "door height 3.2 metres"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "D3F7FC0B-29EB-4EB0-9A2B-3D8489031F4F" },
+              "unavailable": { "S": "F22E0BB4-A727-4870-8B27-21D45372B1C8" },
+              "expiry_date": { "S": "2020-10-13T17:00:00Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "06EF991F-215A-4801-9490-14A8D0E5A03B" },
+          "name": { "S": "Murray Group" },
+          "location": {
+            "M": {
+              "postcode": { "S": "LI4 4GH" },
+              "latitude": { "N": "54.948640" },
+              "longitude": { "N": "-1.601172" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-09-20T13:42:34Z" },
+              "start_date": { "S": "2020-11-05T08:00:00Z" },
+              "end_date": { "S": "2020-11-11T17:00:00Z" },
+              "is_available": { "BOOL": true }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "goods vehicles (HGV)",
+              "public service vehicles (PSV)"
+            ]
+          },
+          "exclusions": {
+            "SS": [
+              "LEZ phase 3",
+              "petrol emissions"
+            ]
+          },
+          "restrictions": {
+            "SS": [
+              "maximum vehicle length 15.1 metres",
+              "door height 3.3 metres"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "7B05891E-D5B3-4FD1-82ED-E26A82F33CA3" },
+              "unavailable": { "S": "25B2856D-9121-4CD1-AA8E-A77C3518F0CC" },
+              "expiry_date": { "S": "2020-11-01T14:52:13Z" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "00BC2870-210E-42A5-BFB1-A8D50AF99A8E" },
+          "name": { "S": "Walsh LLC" },
+          "location": {
+            "M": {
+              "postcode": { "S": "LE14 5IY" },
+              "latitude": { "N": "55.859322" },
+              "longitude": { "N": "-4.305614" }
+            }
+          },
+          "availability": {
+            "M": {
+              "last updated": { "S": "2020-07-22T14:42:34Z" },
+              "start_date": { "S": "2020-08-11T05:00:00Z" },
+              "end_date": { "S": "2020-10-22T15:00:00Z" },
+              "is_available": { "BOOL": false }
+            }
+          },
+          "inclusions": {
+            "SS": [
+              "goods vehicles (HGV)",
+              "public service vehicles (PSV)"
+            ]
+          },
+          "tokens": {
+            "M": {
+              "available": { "S": "F66E847C-D40F-46B6-9CD8-4F4051CD3210" },
+              "unavailable": { "S": "EC2C59DF-3B7C-48C5-94A9-FF355CECB262" },
+              "expiry_date": { "S": "2020-11-20T14:03:04Z" }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
