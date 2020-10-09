@@ -23,6 +23,7 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context): Pr
     const pageSize = +queryParams?.pageSize;
     const lastEvaluatedKey = queryParams?.lastEvaluatedKey;
     const keyName = queryParams?.keyName;
+    logger.info(`GetAll: ${JSON.stringify({ pathParams, queryParams })}`);
 
     if (containsAtLeastOneUndefined([keyName, lastEvaluatedKey])
         && containsAtLeastOneDefined([keyName, lastEvaluatedKey])) {
