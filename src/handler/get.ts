@@ -15,7 +15,7 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context): Pr
   const logger: Logger = createLogger(event, context);
   const queryParams: Record<string, string> = event.queryStringParameters;
   const pathParams: Record<string, string> = event.pathParameters;
-  logger.info(JSON.stringify({ queryParams }));
+  logger.info(`Get: ${JSON.stringify({ pathParams, queryParams })}`);
 
   try {
     const { id, table } = pathParams;
