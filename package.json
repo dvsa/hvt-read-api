@@ -12,7 +12,7 @@
     "start:dev": "docker-compose -f docker-compose.yml up -d && DYNAMO_URL='http://host.docker.internal:8000' DYNAMO_REGION='local' sam local start-api --docker-network hvt-lambda-network",
     "invoke": "sam local invoke"
   },
-  "constributers": [
+  "contributors": [
     {
       "name": "Shaun Hare",
       "email": "shaun.hare@dvsa.gov.uk"
@@ -43,5 +43,8 @@
     "uuid": "^8.3.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "engines": {
+    "node": "^12.18.4"
   }
 }
