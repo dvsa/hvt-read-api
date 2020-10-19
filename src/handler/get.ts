@@ -22,7 +22,14 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context): Pr
     const { keyName } = queryParams;
     const item = await dynamodb.get({ [keyName]: id }, table);
 
+    if (!item) {
+      const msg = `Item { "${keyName}": "${id}" } was not found`;
+      logger.error(msg);
+      throw new Error(msg);
+    }
+
     logger.info(`Retrived item: ${JSON.stringify(item)}`);
+
     return {
       statusCode: 200,
       body: JSON.stringify(item),
