@@ -49,6 +49,24 @@ describe('Get Lambda Function', () => {
     );
   });
 
+  test('should throw error if the requested item could not be found', async () => {
+    const pathParameters: Record<string, string> = { table: TEST_TABLE, id: 'invalid-id' };
+    const queryStringParameters: Record<string, string> = { keyName: 'id' };
+    const requestContext: APIGatewayEventRequestContext = <APIGatewayEventRequestContext> { requestId: v4() };
+    const headers: Record<string, string> = {};
+    const eventMock: APIGatewayProxyEvent = <APIGatewayProxyEvent> {
+      pathParameters,
+      queryStringParameters,
+      requestContext,
+      headers,
+    };
+    const contextMock: Context = <Context> { awsRequestId: v4() };
+
+    await expect(handler(eventMock, contextMock)).rejects.toThrow(
+      'Item { "id": "invalid-id" } was not found',
+    );
+  });
+
   beforeAll(async () => {
     const params: Record<string, unknown> = dynamoHelper.getCreateTableParams('id', TEST_TABLE);
     await dynamoHelper.createTable(params);

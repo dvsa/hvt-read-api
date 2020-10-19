@@ -5,7 +5,7 @@ A READ ONLY api for HVT testing data
 **Requirements**
 
 - Docker && Docker Compose
-- node v12.18.3
+- node v12.18.4
 - [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 
 
