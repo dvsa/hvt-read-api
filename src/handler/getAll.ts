@@ -31,12 +31,12 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context): Pr
     }
     const key = containsAtLeastOneUndefined([keyName, lastEvaluatedKey]) ? undefined : { [keyName]: lastEvaluatedKey };
 
-    const items = await dynamodb.getAll(table, pageSize, key);
+    const results = await dynamodb.getAll(table, pageSize, key);
 
-    logger.info(`Retrived items: ${JSON.stringify(items)}`);
+    logger.info(`Retrived [${results.Count}] items`);
     return {
       statusCode: 200,
-      body: JSON.stringify(items),
+      body: JSON.stringify(results),
     };
   } catch (error) {
     logger.error(error);
