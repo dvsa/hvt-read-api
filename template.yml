@@ -1,15 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 
-Parameters:
-  DYNAMO_URL:
-    Type: String
-    Description: Dynamodb host url
-  DYNAMO_REGION:
-    Type: String
-    Description: Dynamodb host url
-    Default: local
-
 Resources:
   GetLambdaFunction:
     Type: 'AWS::Serverless::Function'
@@ -17,10 +8,6 @@ Resources:
       CodeUri: src/handler/
       Handler: get.handler
       Runtime: nodejs12.x  
-      Environment:
-        Variables:
-          DYNAMO_URL: !Ref DYNAMO_URL
-          DYNAMO_REGION: !Ref DYNAMO_REGION
       Events:
         GetLambdaApi:
           Type: Api
@@ -34,10 +21,6 @@ Resources:
       CodeUri: src/handler/
       Handler: getAll.handler
       Runtime: nodejs12.x  
-      Environment:
-        Variables:
-          DYNAMO_URL: !Ref DYNAMO_URL
-          DYNAMO_REGION: !Ref DYNAMO_REGION
       Events:
         GetLambdaApi:
           Type: Api

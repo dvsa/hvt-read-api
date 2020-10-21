@@ -1,5 +1,8 @@
 import { DynamoDB } from 'aws-sdk';
 import { AttributeMap, ScanOutput } from 'aws-sdk/clients/dynamodb';
+import { getConfig, Config } from '../lib/config';
+
+const config: Config = getConfig();
 
 type DynamoKey = {[key: string]: string};
 
@@ -8,8 +11,8 @@ type Item = AttributeMap;
 type PagedItems = ScanOutput;
 
 const client = new DynamoDB.DocumentClient({
-  endpoint: process.env.DYNAMO_URL,
-  region: process.env.DYNAMO_REGION,
+  endpoint: config.DYNAMO_URL,
+  region: config.DYNAMO_REGION,
 });
 
 export const get = async (key: DynamoKey, table: string): Promise<Item> => {

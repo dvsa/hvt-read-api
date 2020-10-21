@@ -16,7 +16,7 @@ A READ ONLY api for HVT testing data
 
 
 **Run Lambdas Locally**
-
+- Create a `.env` file from the template in `.env.development`.
 - `npm run start:dev`
 - To ensure that the lambdas have been successfully served, run the following command in a separate terminal:
     - `curl --request GET http://localhost:3000/?message=hello%20world`
