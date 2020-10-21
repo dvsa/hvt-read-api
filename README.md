@@ -59,10 +59,3 @@ This shows an example of what the logs look like from the second invoked lambda 
 ```
 2020-09-10T17:05:31.627Z	32ff455b-057d-1dd7-98b8-7034bf182dc8	INFO	{"apiRequestId":"d9222e0a-6bd9-49e0-84dd-ffe0680bd141","correlationId":"5ff37fce-5ace-114c-9120-a1406cc8d11d","message":"Here's a gnarly info message from lambda 2 - notice how my correlationId is the same as the lambda 1"}
 ```
-
-**Database migrations**
-
-Inside `ops/local` directory there are simple bash scripts for creating dynamoDB tables and populating them with dummy data. For example, in order to create and populate `AuthorisedTestingFacilities` table with test data, run the following command inside `ops/local` directory:
-```bash
-./create-authorised-testing-facilities-table/sh && ./populate-authorised-testing-facilities-table.sh
-```
