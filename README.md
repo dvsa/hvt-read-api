@@ -1,39 +1,33 @@
-# HVT READ API
+# hvt-read-api
 
-A READ ONLY api for HVT testing data 
+Serverless Node lambdas (GetLambdaFunction and GetAllLambdaFunction) for querying DynamoDB data.
 
-**Requirements**
+## Requirements
 
-- Docker && Docker Compose
-- node v12.18.4
+- [node v12.18.4](https://nodejs.org/en/download/releases/)
+- [Docker](https://www.docker.com/get-started)
 - [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 
 
-**Build**
+## Run Locally
 
-- `npm i`
-- `npm run build:dev`
-
-
-**Run Lambdas Locally**
-- Create a `.env` file from the template in `.env.development`.
-- `npm run start:dev`
-- To ensure that the lambdas have been successfully served, run the following command in a separate terminal:
-    - `curl --request GET http://localhost:3000/?message=hello%20world`
-    - the response should be: `{"queryParams": {"message": "hello world"}}`
-- To run CloudWatch Event lambdas: `npm run invoke -- CloudWatchEventLambdaFunction`
+1. Follow build steps in [hvt-data](https://gitlab.motdev.org.uk/hvtesting/hvt-data/) to prepare local dataset
+1. `npm i`
+1. `cp .env.development .env`
+1. `npm run build:dev`
+1. `npm run start:dev`
+1. Send an HTTP request to the lambda's URI (`curl --request GET http://localhost:3000/<DYNAMODB_TABLE_NAME>`)
 
 
-**Debug Lambdas Locally (VS Code only)**
+## Debug Locally (VS Code only)
 
-- Run lambdas in debug mode: `npm run start:dev -- -d 5858`
-- Add a breakpoint to the lambda being tested (`src/handler/get.ts`)
-- Run the debug config from VS Code that corresponds to lambda being tested (`GetLambdaFunction`)
-- Send an HTTP request to the lambda's URI (`curl --request GET http://localhost:3000/?message=hello%20world`)
-- To debug CloudWatch Event lambdas: `npm run invoke -- CloudWatchEventLambdaFunction -d 5858`
+1. Run lambdas in debug mode: `npm run start:dev -- -d 5858`
+1. Add a breakpoint to the lambda being tested (`src/handler/get.ts`)
+1. Run the debug config from VS Code that corresponds to lambda being tested (`GetLambdaFunction`)
+1. Send an HTTP request to the lambda's URI (`curl --request GET http://localhost:3000/<DYNAMODB_TABLE_NAME>`)
 
 
-**Tests**
+## Tests
 
 - The [Jest](https://jestjs.io/) framework is used to run tests and collect code coverage
 - To run the tests, run the following command within the root directory of the project: `npm test`
@@ -41,7 +35,15 @@ A READ ONLY api for HVT testing data
     - The coverage requirements can be set in `jest.config.js`
 
 
-**Logging**
+## Build for Production
+
+1. `npm i`
+1. add environment variables to `.env`
+1. `npm run build:prod`
+1.  Zip file can be found in `./dist/`
+
+
+## Logging
 
 By using a utility wrapper (`src/util/logger`) surrounding `console.log`, the `awsRequestId` and a "correlation ID" is output with every debug/info/warn/error message.
 
