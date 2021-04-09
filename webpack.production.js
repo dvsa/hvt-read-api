@@ -6,8 +6,9 @@ const branchName = require('current-git-branch');
 
 const GETALL_LAMBDA_NAME = "GetAllLambdaFunction"; 
 const GET_LAMBDA_NAME = "GetLambdaFunction";
-const OUTPUT_FOLDER = './dist'
-const BUILD_VERSION = branchName().replace("/","-");
+const OUTPUT_FOLDER = './dist';
+const REPO_NAME = `hvt-read-api`;
+const BRANCH_NAME = branchName().replace("/","-");
 
 class BundlePlugin {
   constructor(params) {
@@ -41,11 +42,11 @@ class BundlePlugin {
     archive.on('error', function(err){
         throw err;
     });
-    
+
     archive.pipe(output);
     archive.glob(
-      `**/*`, 
-      { 
+      `**/*`,
+      {
         cwd: inputPath,
         skip: ignore
       }
@@ -54,22 +55,25 @@ class BundlePlugin {
   }
 };
 
-module.exports = merge(common, {
-  mode: 'production',
-  plugins: [
-    new BundlePlugin({
-      archives: [
-        {
-          inputPath: `.aws-sam/build/${GETALL_LAMBDA_NAME}`,
-          outputPath: `${OUTPUT_FOLDER}`,
-          outputName: `HVT-${GETALL_LAMBDA_NAME}-${BUILD_VERSION}`,
-        },
-        {
-          inputPath: `.aws-sam/build/${GET_LAMBDA_NAME}`,
-          outputPath: `${OUTPUT_FOLDER}`,
-          outputName: `HVT-${GET_LAMBDA_NAME}-${BUILD_VERSION}`,
-        }
-      ],
-    }),
-  ],
-});
+module.exports = env => {
+  let commit = env ? env.commit ? env.commit : 'local' : 'local' ;
+  return merge(common, {
+    mode: 'production',
+    plugins: [
+      new BundlePlugin({
+        archives: [
+          {
+            inputPath: `.aws-sam/build/${GETALL_LAMBDA_NAME}`,
+            outputPath: `${OUTPUT_FOLDER}`,
+            outputName: `${REPO_NAME}-${GETALL_LAMBDA_NAME}-${BRANCH_NAME}-${commit}`,
+          },
+          {
+            inputPath: `.aws-sam/build/${GET_LAMBDA_NAME}`,
+            outputPath: `${OUTPUT_FOLDER}`,
+            outputName: `${REPO_NAME}-${GET_LAMBDA_NAME}-${BRANCH_NAME}-${commit}`,
+          }
+        ],
+      }),
+    ],
+    })
+};
