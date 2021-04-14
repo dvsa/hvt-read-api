@@ -1,10 +1,6 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
 const AwsSamPlugin = require('aws-sam-webpack-plugin');
-
 const awsSamPlugin = new AwsSamPlugin({ vscodeDebug: false });
-const GETALL_LAMBDA_NAME = "GetAllLambdaFunction"; 
-const GET_LAMBDA_NAME = "GetLambdaFunction";
 
 module.exports = {
   // Loads the entry object from the AWS::Serverless::Function resources in your
@@ -33,12 +29,6 @@ module.exports = {
 
   // Add the AWS SAM Webpack plugin
   plugins: [
-    awsSamPlugin,
-    new CopyPlugin({
-      patterns: [
-        { from: './.env', to: `.aws-sam/build/${GETALL_LAMBDA_NAME}/` },
-        { from: './.env', to: `.aws-sam/build/${GET_LAMBDA_NAME}/` },
-      ],
-    }),
+    awsSamPlugin
   ]
 };
