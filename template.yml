@@ -7,7 +7,7 @@ Resources:
     Properties:
       CodeUri: src/handler/
       Handler: get.handler
-      Runtime: nodejs18.x
+      Runtime: nodejs24.x
       Events:
         GetLambdaApi:
           Type: Api
@@ -20,7 +20,7 @@ Resources:
     Properties:
       CodeUri: src/handler/
       Handler: getAll.handler
-      Runtime: nodejs18.x
+      Runtime: nodejs24.x
       Events:
         GetLambdaApi:
           Type: Api
